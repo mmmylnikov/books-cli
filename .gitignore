@@ -163,3 +163,4 @@ cython_debug/
 
 # Other
 sandbox.py
+books/fixture.json
