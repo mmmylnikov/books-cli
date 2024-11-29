@@ -10,7 +10,7 @@ Optional (for development):
 - [Flake8](https://pypi.org/project/flake8/) - style checking
 - [Mypy](https://pypi.org/project/mypy/) - type checking
 - [Isort](https://pypi.org/project/isort/) - import sorting
-- [VHS](https://github.com/charmbracelet/vhs) - demo gif animation
+- [VHS](https://github.com/charmbracelet/vhs) - demo gif animation (later, keep tuned)
 
 ## Installation
 
