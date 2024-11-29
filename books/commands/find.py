@@ -18,10 +18,10 @@ class Find(Command):
         )
         find_parser.add_argument(
             "-t", "--title", help="Title of the book to find"
-            )
+        )
         find_parser.add_argument(
             "-a", "--author", help="Author of the book to find"
-            )
+        )
         find_parser.add_argument(
             "-y", "--year", type=int, help="Year of publication to find"
         )
