@@ -103,7 +103,7 @@ You can find more information about each command on [documentation page](docs/do
 
 To develop **books**, you need to run the following steps:
 
-1. Download the application's source code to a `rptodo_project/` directory
+1. Download the application's source code
 
 ```sh
 $ git clone https://github.com/mmmylnikov/books-cli.git
