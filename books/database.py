@@ -15,11 +15,14 @@ class BookDatabase:
     db_file: str
     books: dict[int, Book]
     next_id: int
+    debug: bool = False
 
     def __init__(
-        self, db_file: str = os.path.join(dir_path, "books.json")
+        self, db_file: str = os.path.join(dir_path, "books.json"),
+        debug: bool = False
     ) -> None:
         self.db_file = db_file
+        self.debug = debug
         self.load()
 
     def get_next_id(self) -> int:
@@ -47,6 +50,8 @@ class BookDatabase:
         self.next_id = self.get_next_id()
 
     def save(self) -> None:
+        if self.debug:
+            return
         with open(self.db_file, 'w') as f:
             json.dump(self.books_to_dict(), f, indent=4, ensure_ascii=False)
 
