@@ -25,6 +25,13 @@ class Book:
     year: int
     status: BookStatus = BookStatus.AVAILABLE
 
+    def __post_init__(self) -> None:
+        for field_name in ['title', 'author']:
+            attr_value = getattr(self, field_name)
+            attr_value = attr_value.strip()
+            attr_value = attr_value.replace("\n", " ")
+            setattr(self, field_name, attr_value)
+
     def to_dict(self) -> dict:
         return {
             'id': self.id,
@@ -49,13 +56,18 @@ class Book:
         return [field.name for field in fields(cls)]
 
     @staticmethod
-    def print_list_books_as_table(books: list["Book"]) -> None:
-        print("{:>4} {:<25} {:<25} {:>4} {:<10}".format(*Book.get_fields()))
-        print("-" * 79)
+    def print_list_books_as_table(books: list["Book"]) -> str:
+        output = ""
+        output += (
+            "{:>4} {:<25} {:<25} {:>4} {:<10}".format(*Book.get_fields())
+        ) + "\n"
+        output += ("-" * 79) + "\n"
 
         for book in books:
-            print(
+            output += (
                 "{:>4} {:<25} {:<25} {:>4} {:<10}".format(
                     *book.to_dict().values()
-                )
+                ) + "\n"
             )
+        print(output)
+        return output
