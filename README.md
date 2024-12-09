@@ -10,6 +10,7 @@ Optional (for development):
 - [Flake8](https://pypi.org/project/flake8/) - style checking
 - [Mypy](https://pypi.org/project/mypy/) - type checking
 - [Isort](https://pypi.org/project/isort/) - import sorting
+- [Pytest](https://pypi.org/project/pytest/), [pytest-cov](https://pypi.org/project/pytest-cov/), [hypothesis](https://pypi.org/project/hypothesis/) - unit testing
 - [VHS](https://github.com/charmbracelet/vhs) - demo gif animation (later, keep tuned)
 
 ## Installation
@@ -134,6 +135,12 @@ Flake8 and Mypy are used to check the code's style and types. At the same time, 
 $ make check
 ```
 
+6. Run tests
+
+```sh
+$ make test
+```
+
 ## Release History
 
 - 1.0.0
@@ -145,6 +152,8 @@ $ make check
   + database template from books by Russian writers
   + flake8 check code style
   + mypy check types
+  + unit tests by Pytest and Hypothesis with coverage 99.6%
+  + CI workflow with GitHub Actions (style, types, tests)
 
 ## TODO
 
